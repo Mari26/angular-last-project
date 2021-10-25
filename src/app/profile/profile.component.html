@@ -1,0 +1,81 @@
+<div class="box p-3">
+    <div class="field">
+        <div class="control">
+            <input class="input" type="text" placeholder="Type to search" [(ngModel)]="data">
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of Users">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm)">
+        <div class="field">
+            <label class="label">Full Name</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Full name" name="fullName" [(ngModel)]="profile.fullName" />
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Username</label>
+            <div class="control has-icons-left has-icons-right">
+                <!-- is-success -->
+                <input class="input" type="text" placeholder="Text input" name="userName" [(ngModel)]="profile.userName" />
+                <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+                <!-- <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span> -->
+            </div>
+            <!-- <p class="help is-success">This username is available</p> -->
+        </div>
+
+        <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-left has-icons-right">
+                <!-- is-danger -->
+                <input class="input" type="email" placeholder="Email" name="email" required [(ngModel)]="profile.email" />
+                <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+                <!-- <span class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span> -->
+            </div>
+            <!-- <p class="help is-danger">This email is invalid</p> -->
+        </div>
+
+        <div class="field">
+            <label class="label">Bio</label>
+            <div class="control">
+                <textarea class="textarea" placeholder="Textarea" name="bio" [(ngModel)]="profile.bio"></textarea>
+            </div>
+        </div>
+
+        <div class="field is-grouped">
+            <div class="control">
+                <button class="button is-link" type="submit">Save Profile</button>
+            </div>
+            <div class="control">
+                <button class="button is-link is-light">Cancel</button>
+            </div>
+        </div>
+    </form>
+
+
+
+</div>

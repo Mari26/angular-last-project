@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "angular-v3": {
+      "hosting": {
+        "angular-expanse-manager": [
+          "angular-v3"
+        ]
+      }
+    },
+    "peronal-site-f6f36": {
+      "hosting": {
+        "angular-expanse-manager": [
+          "peronal-site-f6f36"
+        ]
+      }
+    }
+  }
+}
